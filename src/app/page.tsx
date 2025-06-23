@@ -28,49 +28,27 @@ const urbanist = Urbanist({
 export default function Home() {
   return (
     <>
-    <head>
-      <title>Next.js App with Tailwind CSS</title>
-    </head>
     <main className="">
       {/* Header Section */}
       <Header />
       {/* END OF HEADER*/}
       {/*Landing Page Intro*/}
-        <div className={`${urbanist.variable} flex`}>
-          <div className="relative w-full md:max-w-[620px] md:h-[525px] lg:w-[1024px]">
-            <Image
-              src="/20240410_111015.webp"
-              alt="Fuji"
-              fill
-              style={{ objectFit: "cover" }}
-              quality={100}
-              />
-              
-              {/*Landing Page Text*/}
-              <div className="absolute text-white font-urbanist text-7xl mt-19 ml-10 drop-shadow-2xl">Travel with ease</div>
-              <div className="absolute text-white font-urbanist text-7xl mt-41 ml-11">in</div>
-              <div className="absolute text-white font-urbanist text-7xl mt-62 ml-10">Japan</div>
-              <div className="absolute text-white font-urbanist text-lg mt-92 ml-10">Explore Japan and see the Eye Catching Tokyo Skytree,</div>
-              <div className="absolute text-white font-urbanist text-lg mt-97 ml-10">Ice Caps of Mt. Fuji, Temples of Kyoto,</div>
-              <div className="absolute text-white font-urbanist text-lg mt-102 ml-10">to the Snowy Land of Hokkaido, and to the Beaches of</div>
-              <div className="absolute text-white font-urbanist text-lg mt-107 ml-10">Okinawa we will guide you there!</div>
-              {/*Landing Page Text End*/}
-
+        <div className={`${urbanist.variable} flex flex-col pt-1`}>
+          <div className="absolute pt-14 pl-10">
+            <span className="font-urbanist text-white text-2xl">Journey with Ease</span><br/>
+            <span className="font-urbanist text-white text-2xl">Across Japan</span>
           </div>
-          <div className="relative w-full max-w-[148px] h-[525px]">
+          <div className=" bg-red-900 w-full max-w-auto h-auto">
             <Image
-              src="/20230609_173348.jpg"
-              alt="Skytree"
-              fill
-              style={{ objectFit: "cover" }}
-              quality={100}
+              src="/20240410_11101222.jpg"
+              alt="www"
+              width={600}
+              height={400}
+              className=""
             />
           </div>
-        </div>
+ 
 
-        <div className="flex flex-col">
-          <div className="">adwwadadw</div>
-          <div>awdawdawda</div>
         </div>
     </main>
     </>
