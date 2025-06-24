@@ -15,7 +15,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <div className={`${instrumentSans.variable} fixed w-full bg-white border-b-2 border-b-black shadow-xl z-100`}>
+    <div className={`${instrumentSans.variable} fixed w-full bg-white border-b-1 border-b-black shadow-xl z-100`}>
       <div className="flex justify-between p-6">
         <div className="font-instrument-sans">Home</div>
         <div className="font-instrument-sans">Dark Toggle</div>

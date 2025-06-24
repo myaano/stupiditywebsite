@@ -28,9 +28,7 @@ const urbanist = Urbanist({
 export default function Home() {
   return (
     <>
-    <head>
-      <title>Next.js App with Tailwind CSS</title>
-    </head>
+
     <main className="">
       {/* Header Section */}
       <Header />
@@ -38,26 +36,68 @@ export default function Home() {
       {/*Landing Page Intro*/}
       
       <div className={`${urbanist.variable}`}>
-        <div className="pt-18">
-          <div className="font-urbanist text-white text-3xl absolute pl-5 top-27 sm:top-45 sm:text-4xl sm:pl-14 md:top-53 md:text-5xl md:pl-18">
-            <p className="">Journey with Ease</p>
-            <p className="">Across Japan</p>
-          </div>
-          <div className="font-urbanist text-white text-[10px] absolute top-65 pl-7 ">
-            <p className="">Travel across Japan and see the Ice Caps of Mt.Fuji,</p>
-            <p className="">the Eye Catching Tokyo Skytree,</p>
+        {/*MARGIN DIV*/}
+        <div className="grid grid-cols-8 gap-4">
+
+          <div className="border-r-2 border-r-black shadow-xl">wdwd</div>
+
+
+          <div className="col-span-6">
+
+            <div className="pt-18">
+              <div className="font-urbanist text-white text-3xl absolute pl-5 top-27 sm:top-45 sm:text-4xl sm:pl-14 md:top-53 md:text-5xl md:pl-18 lg:top-43 lg:pl-14">
+                <p className="">Journey with Ease</p>
+                <p className="">Across Japan</p>
+              </div>
+              <div className="font-urbanist text-white text-[10px] absolute top-65 pl-7 sm:pl-14 sm:top-100 sm:text-[16px] md:pl-18 md:top-138 md:text-[18px] lg:top-110 lg:pl-14 ">
+                <p className="">Travel across Japan and see the Ice Caps of Mt.Fuji,</p>
+                <p className="">the Eye Catching Tokyo Skytree, the Traditional City of Kyoto,</p>
+                <p className="">the Shrines and Temples dating back to the Heian Period</p>
+              </div>
+              <Image
+              src="/20240410_11101222.jpg"
+              alt="fuji"
+              width={768}
+              height={200}
+              className="w-full h-auto"
+              />
+            </div>
+
+
+
+
+
+
+
+
+
             
           </div>
-          <Image
-          src="/20240410_11101222.jpg"
-          alt="fuji"
-          width={768}
-          height={400}
-          className="w-full h-auto"
-          />
+          <div className="border-l-2 border-r-black shadow-xl">wdwdw</div>
+
         </div>
+        {/*MARGIN DIV END*/}
+
       </div>
 
+
+
+
+
+
+      <div>awhduaihdiawhdiawda</div>
+      <div>awhduaihdiawhdiawda</div>
+      <div>awhduaihdiawhdiawda</div>
+      <div>awhduaihdiawhdiawda</div>
+      <div>awhduaihdiawhdiawda</div>
+      <div>awhduaihdiawhdiawda</div>
+      <div>awhduaihdiawhdiawda</div>
+      <div>awhduaihdiawhdiawda</div>
+      <div>awhduaihdiawhdiawda</div>
+      <div>awhduaihdiawhdiawda</div>
+      <div>awhduaihdiawhdiawda</div>
+      <div>awhduaihdiawhdiawda</div>
+      <div>awhduaihdiawhdiawda</div>
 
 
 
