@@ -28,53 +28,59 @@ const urbanist = Urbanist({
 export default function Home() {
   return (
     <>
+    <head>
+      <title>Next.js App with Tailwind CSS</title>
+    </head>
     <main className="">
       {/* Header Section */}
       <Header />
       {/* END OF HEADER*/}
       {/*Landing Page Intro*/}
-      
-      <div className={`${urbanist.variable}`}>
-        <div className="pt-18">
-          <div className="font-urbanist text-white">
-            <span className="text-3xl absolute pl-7  text-center sm:top-45 sm:text-4xl sm:pl-14 md:top-53 md:text-5xl md:pl-18">Journey with Ease</span>
-          </div>
-          <Image
-          src="/20240410_11101222.jpg"
-          alt="fuji"
-          width={768}
-          height={600}
-          className="w-full h-auto"
-          />
-        </div>
-      </div>
+        <div className={`${urbanist.variable} flex`}>
+          <div className="relative w-full md:max-w-[620px] md:h-[525px] lg:w-[1024px]">
+            <Image
+              src="/20240410_111015.webp"
+              alt="Fuji"
+              fill
+              style={{ objectFit: "cover" }}
+              quality={100}
+              />
+              
+              {/*Landing Page Text*/}
+              <div className="absolute text-white font-urbanist text-7xl mt-19 ml-10 drop-shadow-2xl">Travel with ease</div>
+              <div className="absolute text-white font-urbanist text-7xl mt-41 ml-11">in</div>
+              <div className="absolute text-white font-urbanist text-7xl mt-62 ml-10">Japan</div>
+              <div className="absolute text-white font-urbanist text-lg mt-92 ml-10">Explore Japan and see the Eye Catching Tokyo Skytree,</div>
+              <div className="absolute text-white font-urbanist text-lg mt-97 ml-10">Ice Caps of Mt. Fuji, Temples of Kyoto,</div>
+              <div className="absolute text-white font-urbanist text-lg mt-102 ml-10">to the Snowy Land of Hokkaido, and to the Beaches of</div>
+              <div className="absolute text-white font-urbanist text-lg mt-107 ml-10">Okinawa we will guide you there!</div>
+              {/*Landing Page Text End*/}
 
-      <div>adwadadaw</div>
-      <div>adwadadaw</div>
-      <div>adwadadaw</div>
-      <div>adwadadaw</div>
-      <div>adwadadaw</div>
-      <div>adwadadaw</div>
-      <div>adwadadaw</div>
-      <div>adwadadaw</div>
-      <div>adwadadaw</div>
-      <div>adwadadaw</div>
-      <div>adwadadaw</div>
-      <div>adwadadaw</div>
-      <div>adwadadaw</div>
-      <div>adwadadaw</div>
-      <div>adwadadaw</div>
-      <div>adwadadaw</div>
-      <div>adwadadaw</div>
-      <div>adwadadaw</div>
-      <div>adwadadaw</div>
-      <div>adwadadaw</div>
-      <div>adwadadaw</div>
-      <div>adwadadaw</div>
-      <div>adwadadaw</div>
-      <div>adwadadaw</div>
-      <div>adwadadaw</div>
-      <div>adwadadaw</div>
+          </div>
+          <div className="relative w-full max-w-[148px] h-[525px]">
+            <Image
+              src="/20230609_173348.jpg"
+              alt="Skytree"
+              fill
+              style={{ objectFit: "cover" }}
+              quality={100}
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col">
+          <div className="">adwwadadw</div>
+          <div>awdawdawda</div>
+          <div>CHANGESSS !!!!!!</div>
+          
+
+
+
+
+
+
+
+        </div>
     </main>
     </>
   );
