@@ -71,7 +71,7 @@ export default function Home() {
         <div className="flex flex-col">
           <div className="">adwwadadw</div>
           <div>awdawdawda</div>
-          <div>skrtstass beuirgiyuawgryuaw</div>
+          <div>CHANGESSS !!!!!!</div>
           
 
 
