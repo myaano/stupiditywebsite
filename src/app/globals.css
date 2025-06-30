@@ -15,6 +15,14 @@
   --font-nunito-sans: var(--font-nunito-sans);
 }
 
+@theme {
+  --breakpoint-xxsm: 475px;
+  --breakpoint-xsm: 525px;
+  --breakpoint-fhsf: 575px;
+  --breakpoint-sh: 600px;
+  --breakpoint-shef: 685px;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
