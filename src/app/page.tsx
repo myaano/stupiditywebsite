@@ -46,7 +46,7 @@ export default function Home() {
 
         <div className={`${urbanist.variable} ${nunitoSans.variable}`}>
           <div className="pt-18 lg:hidden block">
-            <div className="font-urbanist text-white text-3xl absolute pl-5 top-27 xxsm:top-35 xsm:top-37 xsm:pl-7 sm:top-42 sm:text-4xl sm:pl-14 md:top-45 md:text-5xl md:pl-13 lg:top-43 lg:pl-14">
+            <div className="font-urbanist text-white text-3xl absolute pl-5 top-27 xxsm:top-35 xsm:top-37 xsm:pl-7 sm:top-42  sm:text-4xl sm:pl-14 md:top-45 md:text-5xl md:pl-13 lg:top-43 lg:pl-14">
               <p className="">Journey with Ease</p>
               <p className="">Across Japan</p>
             </div>
@@ -55,7 +55,7 @@ export default function Home() {
                 Travel across Japan and see the Ice Caps of Mt.Fuji,
               </p>
               <p className="">
-                the Eye Catching Tokyo Skytree, the Traditional City of Kyoto,
+                the Eye Catching Tokyo Skytree, the Traditional City of Kyoto or
               </p>
               <p className="">
                 the Shrines and Temples dating back to the Heian Period
@@ -72,21 +72,21 @@ export default function Home() {
           <div className="bg-black">awd</div>
 
           <div className="lg:hidden block">
-            <div className="bg-[rgb(255,195,206)] text-white  h-auto rounded-2xl absolute top-138 left-10 w-auto">
-              <button className="px-3 font-nunito-sans">
+            <div className="bg-[rgb(255,195,206)] text-white  h-auto rounded-2xl absolute top-138 xxsm:top-148 xsm:top-160 fhsf:top-175 fhsf:left-20 fhsf:text-[17px] sh:top-183  sm:top-193 left-10 w-auto focus:outline-none">
+              <button className="px-3 font-nunito-sans active:opacity-50">
                 <Link href="">Explore</Link>
               </button>
             </div>
-            <h1 className="text-3xl absolute top-107 left-81 text-white font-urbanist sm:top-148 sm:left-115 sm:text-5xl md:top-172">
+            <h1 className="text-3xl absolute top-107 left-81 text-white font-urbanist xxsm:top-116 xxsm:left-88 xsm:top-127 xsm:left-95 xsm:text-4xl fhsf:top-135 fhsf:left-104 sh:top-144 sh:left-115 sm:top-148 sm:left-115 sm:text-5xl md:top-172">
               Chubu
             </h1>
-            <p className="font-urbanist text-white text-[10px] absolute top-133 left-53 sm:top-189 sm:left-80 sm:text-[14px]">
+            <p className="font-urbanist text-white  text-[10px] absolute top-133 left-53 xxsm:top-145 xxsm:left-60 xsm:top-159 xsm:left-61 xsm:text-[12px] fhsf:top-172 fhsf:left-71 sh:top-179 sh:left-81 sm:top-189 sm:left-80 sm:text-[14px]">
               Explore the Castles and Shrines of Aichi to the
             </p>
-            <p className="font-urbanist text-white text-[10px] absolute top-136 left-65 sm:top-193 sm:left-98 sm:text-[14px]">
+            <p className="font-urbanist text-white text-[10px] absolute top-136 left-65 xxsm:top-148 xxsm:left-73 xsm:top-162 xsm:left-76 xsm:text-[12px] fhsf:top-175 fhsf:left-87 sh:top-182 sh:left-96 sm:top-193 sm:left-98 sm:text-[14px]">
               Five Lakes of Mt. Fuji in Yamanashi,
             </p>
-            <p className="font-urbanist text-white text-[10px] absolute top-139 left-70 sm:top-197 sm:left-104 sm:text-[14px]">
+            <p className="font-urbanist text-white text-[10px] absolute top-139 left-70 xxsm:top-151 xxsm:left-78 xsm:top-165 xsm:left-81 xsm:text-[12px] fhsf:top-178 fhsf:left-92 sh:top-185 sh:left-101 sm:top-197 sm:left-104 sm:text-[14px]">
               or Explore the Shrines of Fukui
             </p>
 
@@ -147,8 +147,7 @@ export default function Home() {
         <div className="[@media(min-width:625px)]:text-white [@media(min-width:725px)]:text-pink-500 [@media(min-width:825px)]:text-green-500">
           awhduaihdiawhdiawda
         </div>
-        <div>awhduaihdiawhdiawda</div>
-        <div>awhduaihdiawhdiawda</div>
+        <div className="">awhduaihdiawhdiawda</div>
         <div>awhduaihdiawhdiawda</div>
         <div>awhduaihdiawhdiawda</div>
         <div>awhduaihdiawhdiawda</div>

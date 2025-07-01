@@ -20,7 +20,7 @@
   --breakpoint-xsm: 525px;
   --breakpoint-fhsf: 575px;
   --breakpoint-sh: 600px;
-  --breakpoint-shef: 685px;
+  --breakpoint-sevh: 700px;
 }
 
 @media (prefers-color-scheme: dark) {
