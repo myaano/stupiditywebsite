@@ -11,6 +11,42 @@ import Header from "@/components/header";
 import Image from "next/image";
 import Link from "next/link";
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
   /* for fonts imports*/
 }
@@ -106,6 +142,53 @@ export default function Home() {
               className="w-full h-auto"
             />
           </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
           {/*FOR PC*/}
           <div className=" lg:grid-cols-8 lg:gap-4 hidden lg:grid">
