@@ -10,43 +10,6 @@ import Header from "@/components/header";
 }
 import Image from "next/image";
 import Link from "next/link";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 {
   /* for fonts imports*/
 }
@@ -81,148 +44,73 @@ export default function Home() {
         {/*Landing Page Intro*/}
 
         <div className={`${urbanist.variable} ${nunitoSans.variable}`}>
-          <div className="pt-18 lg:hidden block">
-            <div className="font-urbanist text-white text-3xl absolute pl-5 top-27 xxsm:top-35 xsm:top-37 xsm:pl-7 sm:top-42  sm:text-4xl sm:pl-14 md:top-45 md:text-5xl md:pl-13 lg:top-43 lg:pl-14">
-              <p className="">Journey with Ease</p>
-              <p className="">Across Japan</p>
+          <div className="lg:hidden block w-auto">
+            <div className="@container/LandTitle border border-amber-500 w-auto h-auto">
+              <div className="w-9000 hidden">w</div>
+              <div className=" font-urbanist text-white text-3xl absolute pl-5 top-27 @[480px]/LandTitle:top-33 @[525px]/LandTitle:top-38 @[525px]/LandTitle:text-4xl @[525px]/LandTitle:pl-7 @[640px]/LandTitle:top-44 @[640px]/LandTitle:text-5xl @[640px]/LandTitle:pl-14 @[768px]/LandTitle:pl-15 @[768px]/LandTitle:top-43">
+                <p className="">Journey with Ease</p>
+                <p className="">Across Japan</p>
+              </div>
             </div>
-            <div className="font-urbanist text-white text-[10px] absolute top-65 pl-5 xxsm:top-75 xsm:top-80 xsm:pl-7 fhsf:top-90 sm:pl-14 sm:top-95 sm:text-[14px] shef:top-900 md:pl-13 md:top-109 md:text-[18px] lg:top-110 lg:pl-14  ">
-              <p className="">
-                Travel across Japan and see the Ice Caps of Mt.Fuji,
-              </p>
-              <p className="">
-                the Eye Catching Tokyo Skytree, the Traditional City of Kyoto or
-              </p>
-              <p className="">
-                the Shrines and Temples dating back to the Heian Period
-              </p>
+            <div className="@container/LandDesc">
+              <div className="font-urbanist text-white text-[10px] absolute top-65 pl-5 @[480px]/LandDesc:top-74 @[525px]/LandDesc:top-81 @[525px]/LandDesc:text-[12px] @[525px]/LandDesc:pl-7 @[640px]/LandDesc:pl-14 @[640px]/LandDesc:top-95 @[640px]/LandDesc:text-[14px] @[768px]/LandDesc:pl-15 @[768px]/LandDesc:top-109 @[768px]/LandDesc:text-[18px] @[840px]/LandDesc:top-113 @[920px]/LandDesc:top-135">
+                <p className="">
+                  Travel across Japan and see the Ice Caps of Mt.Fuji,
+                </p>
+                <p className="">
+                  the Eye Catching Tokyo Skytree, the Traditional City of Kyoto
+                  or
+                </p>
+                <p className="">
+                  the Shrines and Temples dating back to the Heian Period
+                </p>
+              </div>
             </div>
+          </div>
+          <div className="pt-18 lg:hidden block w-auto">
             <Image
               src="/20240410_11101222.jpg"
               alt="fuji"
-              width={768}
+              width={1024}
               height={200}
               className="w-full h-auto"
             />
           </div>
-          <div className="bg-black">awd</div>
-
-          <div className="lg:hidden block">
-            <div className="bg-[rgb(255,195,206)] text-white  h-auto rounded-2xl absolute top-138 xxsm:top-148 xsm:top-160 fhsf:top-175 fhsf:left-20 fhsf:text-[17px] sh:top-183  sm:top-193 left-10 w-auto focus:outline-none">
-              <button className="px-3 font-nunito-sans active:opacity-50">
-                <Link href="">Explore</Link>
-              </button>
-            </div>
-            <h1 className="text-3xl absolute top-107 left-81 text-white font-urbanist xxsm:top-116 xxsm:left-88 xsm:top-127 xsm:left-95 xsm:text-4xl fhsf:top-135 fhsf:left-104 sh:top-144 sh:left-115 sm:top-148 sm:left-115 sm:text-5xl md:top-172">
-              Chubu
-            </h1>
-            <p className="font-urbanist text-white  text-[10px] absolute top-133 left-53 xxsm:top-145 xxsm:left-60 xsm:top-159 xsm:left-61 xsm:text-[12px] fhsf:top-172 fhsf:left-71 sh:top-179 sh:left-81 sm:top-189 sm:left-80 sm:text-[14px]">
-              Explore the Castles and Shrines of Aichi to the
-            </p>
-            <p className="font-urbanist text-white text-[10px] absolute top-136 left-65 xxsm:top-148 xxsm:left-73 xsm:top-162 xsm:left-76 xsm:text-[12px] fhsf:top-175 fhsf:left-87 sh:top-182 sh:left-96 sm:top-193 sm:left-98 sm:text-[14px]">
-              Five Lakes of Mt. Fuji in Yamanashi,
-            </p>
-            <p className="font-urbanist text-white text-[10px] absolute top-139 left-70 xxsm:top-151 xxsm:left-78 xsm:top-165 xsm:left-81 xsm:text-[12px] fhsf:top-178 fhsf:left-92 sh:top-185 sh:left-101 sm:top-197 sm:left-104 sm:text-[14px]">
-              or Explore the Shrines of Fukui
-            </p>
-
-            <Image
-              src="/jpassets/chubu/aichi/Nagoya-Castle-B.jpg"
-              alt="nagoyacastlepic"
-              width={768}
-              height={200}
-              className="w-full h-auto"
-            />
-
-            <Image
-              src="/jpassets/chubu/aichi/Nagoya_castle.webp"
-              alt="nagoyacastlepic"
-              width={768}
-              height={200}
-              className="w-full h-auto"
-            />
-          </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
           {/*FOR PC*/}
           <div className=" lg:grid-cols-8 lg:gap-4 hidden lg:grid">
-            <div className="border-r-2 border-r-black shadow-xl">wdwd</div>
+            <div className="border-r-2 border-r-black shadow-xl">w</div>
 
-            <div className="col-span-6">
-              <div className="pt-18">
-                <div className="font-urbanist text-white text-3xl absolute pl-5 top-27 sm:top-45 sm:text-4xl sm:pl-14 md:top-53 md:text-5xl md:pl-18 lg:top-43 lg:pl-14 xl:top-50 xl:text-6xl">
-                  <p className="">Journey with Ease</p>
-                  <p className="">Across Japan</p>
-                </div>
-                <div className="font-urbanist text-white text-[10px] absolute top-65 pl-7 sm:pl-14 sm:top-100 sm:text-[16px] md:pl-18 md:top-138 md:text-[18px] lg:top-110 lg:pl-14 xl:top-130 xl:text-[20px]">
-                  <p className="">
-                    Travel across Japan and see the Ice Caps of Mt.Fuji,
-                  </p>
-                  <p className="">
-                    the Eye Catching Tokyo Skytree, the Traditional City of
-                    Kyoto,
-                  </p>
-                  <p className="">
-                    the Shrines and Temples dating back to the Heian Period
-                  </p>
-                </div>
+            <div className="col-span-6 pt-18 @container/Landtitlepc">
+              <div className="hidden lg:block absolute @[764px]/Landtitlepc:top-46 @[764px]/Landtitlepc:pl-14  text-white font-urbanist text-5xl @[896px]/Landtitlepc:top-50 @[896px]/Landtitlepc:pl-16 @[896px]/Landtitlepc:text-6xl @[1025px]/Landtitlepc:top-57 @[1025px]/Landtitlepc:text-7xl @[1025px]/Landtitlepc:pl-25">
+                <p className="">Journey with Ease</p>
+                <p className="">Across Japan</p>
+              </div>
+              <div className="hidden lg:block text-white font-urbanist text-[16px]  absolute @[764px]/Landtitlepc:top-109 @[764px]/Landtitlepc:pl-14 @[838px]/Landtitlepc:top-115 @[896px]/Landtitlepc:top-125 @[896px]/Landtitlepc:pl-16 @[896px]/Landtitlepc:text-[19px] @[956px]/Landtitlepc:top-130 @[1001px]/Landtitlepc:top-135 @[1025px]/Landtitlepc:top-170 @[1025px]/Landtitlepc:text-3xl @[1025px]/Landtitlepc:pl-25 ">
+                <p className="">
+                  Travel across Japan and see the Ice Caps of Mt.Fuji,
+                </p>
+                <p className="">
+                  the Eye Catching Tokyo Skytree, the Traditional City of Kyoto
+                  or
+                </p>
+                <p className="">
+                  the Shrines and Temples dating back to the Heian Period
+                </p>
+              </div>
+
+              <div className="">
                 <Image
                   src="/20240410_11101222.jpg"
                   alt="fuji"
                   width={768}
-                  height={200}
+                  height={50}
                   className="w-full h-auto"
                 />
               </div>
             </div>
 
-            <div className="border-l-2 border-r-black shadow-xl">wdwdw</div>
+            <div className="border-l-2 border-r-black shadow-xl">w </div>
             {/*FOR PC END*/}
           </div>
         </div>
