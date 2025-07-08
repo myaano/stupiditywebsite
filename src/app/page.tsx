@@ -41,7 +41,7 @@ export default function Home() {
   useEffect(() => {
     (async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
-      const locomotiveScroll = new LocomotiveScroll();
+      new LocomotiveScroll();
     })();
   });
 
@@ -53,7 +53,7 @@ export default function Home() {
         {/* END OF HEADER*/}
         {/*Landing Page Intro*/}
 
-        <div className={`${urbanist.variable} ${nunitoSans.variable}`}>
+        <div className={`${urbanist.variable} ${nunitoSans.variable} ${instrumentSans.variable}`}>
           <div className="lg:hidden block w-auto">
             <div className="@container/LandTitle w-auto h-auto">
               <div className="w-9000 hidden">w</div>
