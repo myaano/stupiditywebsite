@@ -18,7 +18,7 @@ export default function Header() {
     <div className={`${instrumentSans.variable} fixed w-full bg-white border-b-1 border-b-black shadow-xl z-100`}>
       <div className="flex justify-between p-6">
         <div className="font-instrument-sans">Home</div>
-        <div className="font-instrument-sans">Dark Toggle</div>
+        <div className="font-instrument-sans">Book Flight</div>
       </div>
     </div>
     
