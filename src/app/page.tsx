@@ -70,8 +70,6 @@ const notosansjp = Noto_Sans_JP({
 });
 
 import { Manrope } from "next/font/google";
-import { get } from "http";
-import { stat } from "fs";
 import Footer from "@/components/footer";
 const manrope = Manrope({
   subsets: ["latin"],
@@ -1076,7 +1074,7 @@ export default function Home() {
               <div className="yygdesc flex overflow-hidden text-[19px] pt-80">
                 <p>
                   Situated in Shibuya Ward, Yoyogi Park offers a peaceful escape
-                  from the city's bustle. Enjoy the serene atmosphere, lush
+                  from the city&apos;s bustle. Enjoy the serene atmosphere, lush
                   greenery, and discover the historic Meiji Jingu Shrine just
                   next door.
                 </p>
@@ -1181,7 +1179,7 @@ export default function Home() {
                 <p>
                   Shinbashi, in Minato Ward, is famous for its lively izakayas
                   and after-work crowd. Follow the salarymen for great food,
-                  drinks, and a taste of Tokyo's vibrant nightlife.
+                  drinks, and a taste of Tokyo&apos;s vibrant nightlife.
                 </p>
               </div>
             </div>
