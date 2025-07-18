@@ -82,7 +82,7 @@ export default function Home() {
     const lenis = new Lenis({
       smoothWheel: true,
     });
-    function raf(time: any) {
+    function raf(time: ) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
@@ -318,10 +318,10 @@ export default function Home() {
   // ikebukuro text split animation
   useEffect(() => {
 
-    let splitikbkr = new SplitText(".ikbkrtxt", { type: "chars" });
-    let splitikbkrtxt = splitikbkr.chars;
+    const splitikbkr = new SplitText(".ikbkrtxt", { type: "chars" });
+    const splitikbkrtxt = splitikbkr.chars;
 
-    let ikbkrDel = gsap.from(splitikbkrtxt, {
+    const ikbkrDel = gsap.from(splitikbkrtxt, {
       yPercent: 130,
       stagger: 0.05,
       ease: "power1.in",
@@ -337,10 +337,10 @@ export default function Home() {
       },
     });
 
-    let splitikbkrkanji = new SplitText(".ikbkrkanji", { type: "chars" });
-    let ikbkrkanjitxt = splitikbkrkanji.chars;
+    const splitikbkrkanji = new SplitText(".ikbkrkanji", { type: "chars" });
+    const ikbkrkanjitxt = splitikbkrkanji.chars;
 
-    let ikbkrkanjiDel = gsap.from(ikbkrkanjitxt, {
+    const ikbkrkanjiDel = gsap.from(ikbkrkanjitxt, {
       yPercent: 130,
       stagger: 0.05,
       ease: "power1.in",
@@ -355,10 +355,10 @@ export default function Home() {
       },
     });
 
-    let ikbkrdescript = new SplitText(".ikbkrdesc", { type: "words" });
-    let ikbkrdescripttxt = ikbkrdescript.words;
+    const ikbkrdescript = new SplitText(".ikbkrdesc", { type: "words" });
+    const ikbkrdescripttxt = ikbkrdescript.words;
 
-    let ikbkrdescDel = gsap.from(ikbkrdescripttxt, {
+    const ikbkrdescDel = gsap.from(ikbkrdescripttxt, {
       yPercent: 130,
       stagger: 0.02,
       ease: "power1.in",
