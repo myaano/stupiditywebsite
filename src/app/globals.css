@@ -13,6 +13,8 @@
   --font-instrument-sans: var(--font-instrument-sans);
   --font-urbanist: var(--font-urbanist);
   --font-nunito-sans: var(--font-nunito-sans);
+  --font-noto-sans-jp: var(--font-noto-sans-jp);
+  --font-manrope: var(--font-manrope);
 }
 
 @theme {
