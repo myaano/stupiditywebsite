@@ -797,7 +797,6 @@ export default function Home() {
       scrollTrigger:{
         trigger: ".tokyodesc",
         start: "top 90%",
-        markers: true,
       },      
       onComplete: () => {tokyodescc.revert(); tokyodesccDel.scrollTrigger?.kill();}
     });
