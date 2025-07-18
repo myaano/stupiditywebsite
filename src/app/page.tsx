@@ -82,7 +82,7 @@ export default function Home() {
     const lenis = new Lenis({
       smoothWheel: true,
     });
-    function raf(time: ) {
+    function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
