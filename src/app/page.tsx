@@ -31,7 +31,7 @@ import castle from "../../public/jpassets/kanto/tokyo/tokyoimperial.jpg";
 {
   /* component imports */
 }
-import Header from "@/components/header";
+
 
 {
   /* react imports*/
@@ -135,10 +135,10 @@ export default function Home() {
     /* for akiba split text */
   }
   useEffect(() => {
-    let akb = new SplitText(".akb", { type: "chars" });
-    let akbtext = akb.chars;
+    const akb = new SplitText(".akb", { type: "chars" });
+    const akbtext = akb.chars;
 
-    let akbtxt = gsap.from(akbtext, {
+    const akbtxt = gsap.from(akbtext, {
       yPercent: 130,
       stagger: 0.05,
       ease: "power1.in",
@@ -153,10 +153,10 @@ export default function Home() {
       },
     });
 
-    let akbkanji = new SplitText(".akb-kanji", { type: "chars" });
-    let akbkanjitext = akbkanji.chars;
+    const akbkanji = new SplitText(".akb-kanji", { type: "chars" });
+    const akbkanjitext = akbkanji.chars;
 
-    let akbkanjitxt = gsap.from(akbkanjitext, {
+    const akbkanjitxt = gsap.from(akbkanjitext, {
       yPercent: 130,
       stagger: 0.02,
       ease: "power1.in",
@@ -171,10 +171,10 @@ export default function Home() {
       },
     });
 
-    let descakb = new SplitText(".akbdesc", { type: "words" });
-    let descakbtext = descakb.words;
+    const descakb = new SplitText(".akbdesc", { type: "words" });
+    const descakbtext = descakb.words;
 
-    let descakbtxt = gsap.from(descakbtext, {
+    const descakbtxt = gsap.from(descakbtext, {
       yPercent: 130,
       stagger: 0.02,
       ease: "power1.in",
@@ -229,10 +229,10 @@ export default function Home() {
 
   // ueno text split animation
   useEffect(() => {
-    let ueno = new SplitText(".uenotxt", { type: "chars" });
-    let uenotxt = ueno.chars;
+    const ueno = new SplitText(".uenotxt", { type: "chars" });
+    const uenotxt = ueno.chars;
 
-    let uenodel = gsap.from(uenotxt, {
+    const uenodel = gsap.from(uenotxt, {
       yPercent: 130,
       stagger: 0.05,
       ease: "power1.in",
@@ -247,10 +247,10 @@ export default function Home() {
       },
     });
 
-    let KanjiUeno = new SplitText(".uenokanji", { type: "chars" });
-    let KanjiUenotxt = KanjiUeno.chars;
+    const KanjiUeno = new SplitText(".uenokanji", { type: "chars" });
+    const KanjiUenotxt = KanjiUeno.chars;
 
-    let KanjiUenoDel = gsap.from(KanjiUenotxt, {
+    const KanjiUenoDel = gsap.from(KanjiUenotxt, {
       yPercent: 130,
       stagger: 0.05,
       ease: "power1.in",
@@ -265,10 +265,10 @@ export default function Home() {
       },
     });
 
-    let UenoDescription = new SplitText(".uenodesc", { type: "words" });
-    let UenoDescriptiontxt = UenoDescription.words;
+    const UenoDescription = new SplitText(".uenodesc", { type: "words" });
+    const UenoDescriptiontxt = UenoDescription.words;
 
-    let UenoDescriptionDel = gsap.from(UenoDescriptiontxt, {
+    const UenoDescriptionDel = gsap.from(UenoDescriptiontxt, {
       yPercent: 130,
       stagger: 0.02,
       ease: "power1.in",
@@ -410,10 +410,10 @@ export default function Home() {
 
   useEffect(() => {
 
-    let sjkmain = new SplitText(".sjk11", { type: "chars" });
-    let sjkmaintxt = sjkmain.chars;
+    const sjkmain = new SplitText(".sjk11", { type: "chars" });
+    const sjkmaintxt = sjkmain.chars;
 
-    let sjkmainDel = gsap.from(sjkmaintxt, {
+    const sjkmainDel = gsap.from(sjkmaintxt, {
       yPercent: 130,
       stagger: 0.05,
       ease: "power1.in",
@@ -428,10 +428,10 @@ export default function Home() {
       },
     });
 
-    let sjkmain2 = new SplitText(".sjk22", { type: "chars" });
-    let sjkmain2txt = sjkmain2.chars;
+    const sjkmain2 = new SplitText(".sjk22", { type: "chars" });
+    const sjkmain2txt = sjkmain2.chars;
 
-    let sjkmain2Del = gsap.from(sjkmain2txt, {
+    const sjkmain2Del = gsap.from(sjkmain2txt, {
       xPercent: -130,
       stagger: 0.05,
       ease: "power1.in",
@@ -446,10 +446,10 @@ export default function Home() {
       },
     });
 
-    let sjkdescc = new SplitText(".sjkdesc", { type: "words" });
-    let sjkdescctxt = sjkdescc.words;
+    const sjkdescc = new SplitText(".sjkdesc", { type: "words" });
+    const sjkdescctxt = sjkdescc.words;
 
-    let sjkdesccDel = gsap.from(sjkdescctxt, {
+    const sjkdesccDel = gsap.from(sjkdescctxt, {
       yPercent: 130,
       stagger: 0.02,
       ease: "power1.in",
@@ -498,10 +498,10 @@ export default function Home() {
   // yoyogi text animations
   useEffect(() => {
 
-    let yyg = new SplitText(".yyg11", { type: "chars" });
-    let yygtxt = yyg.chars;
+    const yyg = new SplitText(".yyg11", { type: "chars" });
+    const yygtxt = yyg.chars;
 
-    let yygDel = gsap.from(yygtxt, {
+    const yygDel = gsap.from(yygtxt, {
       yPercent: 130,
       stagger: 0.05,
       ease: "power1.in",
@@ -516,10 +516,10 @@ export default function Home() {
       },
     });
 
-    let yygknj = new SplitText(".yyg22", { type: "chars" });
-    let yygknjtxt = yygknj.chars;
+    const yygknj = new SplitText(".yyg22", { type: "chars" });
+    const yygknjtxt = yygknj.chars;
 
-    let yygknjDel = gsap.from(yygknjtxt, {
+    const yygknjDel = gsap.from(yygknjtxt, {
       yPercent: 130,
       stagger: 0.05,
       ease: "power1.in",
@@ -534,10 +534,10 @@ export default function Home() {
       },
     });
 
-    let yygdescc = new SplitText(".yygdesc", { type: "words" });
-    let yygdescctxt = yygdescc.words;
+    const yygdescc = new SplitText(".yygdesc", { type: "words" });
+    const yygdescctxt = yygdescc.words;
 
-    let yygdesccDel = gsap.from(yygdescctxt, {
+    const yygdesccDel = gsap.from(yygdescctxt, {
       yPercent: 130,
       stagger: 0.02,
       ease: "power1.in",
@@ -585,10 +585,10 @@ export default function Home() {
 
   // shibuya text animations
   useEffect(() => {
-    let shbymain = new SplitText(".shby11", { type: "chars" });
-    let shbymaintxt = shbymain.chars;
+    const shbymain = new SplitText(".shby11", { type: "chars" });
+    const shbymaintxt = shbymain.chars;
 
-    let shbymainDel = gsap.from(shbymaintxt, {
+    const shbymainDel = gsap.from(shbymaintxt, {
       yPercent: 130,
       stagger: 0.05,
       ease: "power1.in",
@@ -603,10 +603,10 @@ export default function Home() {
       },
     });
 
-    let shbykanji = new SplitText(".shby22", { type: "chars" });
-    let shbykanjitxt = shbykanji.chars;
+    const shbykanji = new SplitText(".shby22", { type: "chars" });
+    const shbykanjitxt = shbykanji.chars;
 
-    let shbykanjiDel = gsap.from(shbykanjitxt, {
+    const shbykanjiDel = gsap.from(shbykanjitxt, {
       yPercent: 130,
       stagger: 0.05,
       ease: "power1.in",
@@ -621,9 +621,9 @@ export default function Home() {
       },
     });
 
-    let shbydescc = new SplitText(".shbydesc", { type: "words" });
-    let shbydescctxt = shbydescc.words;
-    let shbydesccDel = gsap.from(shbydescctxt, {
+    const shbydescc = new SplitText(".shbydesc", { type: "words" });
+    const shbydescctxt = shbydescc.words;
+    const shbydesccDel = gsap.from(shbydescctxt, {
       yPercent: 130,
       stagger: 0.02,
       ease: "power1.in",
@@ -671,9 +671,9 @@ export default function Home() {
 
   // shinbashi text animations
   useEffect(() => {
-    let shinbamain = new SplitText(".shinba11", { type: "chars" });
-    let shinbamaintxt = shinbamain.chars;
-    let shinbamainDel = gsap.from(shinbamaintxt, {
+    const shinbamain = new SplitText(".shinba11", { type: "chars" });
+    const shinbamaintxt = shinbamain.chars;
+    const shinbamainDel = gsap.from(shinbamaintxt, {
       yPercent: 130,
       stagger: 0.05,
       ease: "power1.in",
@@ -688,10 +688,10 @@ export default function Home() {
       },
     });
 
-    let shinbakanji = new SplitText(".shinba22", { type: "chars" });
-    let shinbakanjitxt = shinbakanji.chars;
+    const shinbakanji = new SplitText(".shinba22", { type: "chars" });
+    const shinbakanjitxt = shinbakanji.chars;
 
-    let shinbakanjiDel = gsap.from(shinbakanjitxt, {
+    const shinbakanjiDel = gsap.from(shinbakanjitxt, {
       yPercent: 130,
       stagger: 0.05,
       ease: "power1.in",
@@ -706,10 +706,10 @@ export default function Home() {
       },
     });
 
-    let shinbadescc = new SplitText(".shinbadesc", { type: "words" });
-    let shinbadescctxt = shinbadescc.words;
+    const shinbadescc = new SplitText(".shinbadesc", { type: "words" });
+    const shinbadescctxt = shinbadescc.words;
 
-    let shinbadesccDel = gsap.from(shinbadescctxt, {
+    const shinbadesccDel = gsap.from(shinbadescctxt, {
       yPercent: 130,
       stagger: 0.02,
       ease: "power1.in",
@@ -758,10 +758,10 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    let tokyomain = new SplitText(".tokyo11", {type: "chars"});
-    let tokyomaintxt = tokyomain.chars;
+    const tokyomain = new SplitText(".tokyo11", {type: "chars"});
+    const tokyomaintxt = tokyomain.chars;
 
-    let tokyomainDel = gsap.from(tokyomaintxt, {
+    const tokyomainDel = gsap.from(tokyomaintxt, {
       yPercent: 130,
       stagger: 0.05,
       ease: "power1.in",
@@ -773,10 +773,10 @@ export default function Home() {
       onComplete: () => {tokyomain.revert(); tokyomainDel.scrollTrigger?.kill();}
     });
 
-    let tokyokanji = new SplitText(".tokyo22", {type: "chars"});
-    let tokyokanjitxt = tokyokanji.chars;
+    const tokyokanji = new SplitText(".tokyo22", {type: "chars"});
+    const tokyokanjitxt = tokyokanji.chars;
 
-    let tokyokanjiDel = gsap.from(tokyokanjitxt, {
+    const tokyokanjiDel = gsap.from(tokyokanjitxt, {
       yPercent: 130,
       stagger: 0.05,
       ease: "power1.in",
@@ -788,10 +788,10 @@ export default function Home() {
       onComplete: () => {tokyokanji.revert(); tokyokanjiDel.scrollTrigger?.kill();}
     });
 
-    let tokyodescc = new SplitText(".tokyodesc", {type: "words"});
-    let tokyodescctxt = tokyodescc.words;
+    const tokyodescc = new SplitText(".tokyodesc", {type: "words"});
+    const tokyodescctxt = tokyodescc.words;
 
-    let tokyodesccDel = gsap.from(tokyodescctxt, {
+    const tokyodesccDel = gsap.from(tokyodescctxt, {
       yPercent: 130,
       stagger: 0.02,
       ease: "power1.in",
