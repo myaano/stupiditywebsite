@@ -740,7 +740,7 @@ export default function Home() {
         end: "bottom 80%",
         scrub: true,
       },
-      x: () => window.innerHeight * 1,
+      x: () => window.innerWidth* 1,
     });
 
     gsap.to(".tokyo2", {
@@ -750,7 +750,7 @@ export default function Home() {
         end: "bottom 80%",
         scrub: true,
       },
-      x: () => window.innerHeight * 1,
+      x: () => -window.innerWidth * 1,
     });
 
   }, []);
