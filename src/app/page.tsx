@@ -1,4 +1,5 @@
 "use client";
+
 {
   /* DEPENDENCIES */
 }
@@ -123,10 +124,13 @@ export default function Home() {
       stagger: 0.05,
       ease: "power1.in",
       duration: 0.5,
-      onComplete: () => {tkykanji.revert(); tkykanjiDel.scrollTrigger?.kill();}      
+      onComplete: () => {
+        tkykanji.revert();
+        tkykanjiDel.scrollTrigger?.kill();
+      },
     });
 
-    const tkydesc = new SplitText(".tkydesc", { type: "words"});
+    const tkydesc = new SplitText(".tkydesc", { type: "words" });
     const tkydesctxt = tkydesc.words;
 
     const tkydescDel = gsap.from(tkydesctxt, {
@@ -134,7 +138,10 @@ export default function Home() {
       stagger: 0.05,
       ease: "power1.in",
       duration: 0.5,
-      onComplete: () => {tkydesc.revert(); tkydescDel.scrollTrigger?.kill();}      
+      onComplete: () => {
+        tkydesc.revert();
+        tkydescDel.scrollTrigger?.kill();
+      },
     });
   }, []);
 
@@ -149,8 +156,6 @@ export default function Home() {
     });
   }, []);
 
-
-  
   // "the next station is akihabara" animations
   useEffect(() => {
     ScrollTrigger.create({
@@ -868,6 +873,7 @@ export default function Home() {
 
   return (
     <>
+      {/* Head removed: now handled by app/head.tsx */}
       <main id="wrapper" className="w-full h-auto overflow-hidden">
         <div
           className={`${instrumentSans.variable} ${urbanist.variable} ${nunitoSans.variable} ${notosansjp.variable} ${manrope.variable}  w-auto h-auto `}
