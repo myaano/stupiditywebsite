@@ -2,15 +2,19 @@
 {
   /* DEPENDENCIES */
 }
-import Lenis from "lenis";
+// import Lenis from "lenis";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
 {
   /*END OF DEPENDENCIES */
 }
 
+{
+  /*photo imports*/
+}
 import myImage from "../../public/jpassets/kanto/tokyo/tokyo-station.webp";
 import akiba from "../../public/jpassets/kanto/tokyo/akiba1.jpg";
 import uenoskr1 from "../../public/jpassets/kanto/tokyo/uenoskr1.webp";
@@ -29,9 +33,11 @@ import shinbashi2 from "../../public/jpassets/kanto/tokyo/shinbashi2.webp";
 import station from "../../public/jpassets/kanto/tokyo/tkystation1.jpg";
 import castle from "../../public/jpassets/kanto/tokyo/tokyoimperial.jpg";
 {
+  /*end of photo imports*/
+}
+{
   /* component imports */
 }
-
 
 {
   /* react imports*/
@@ -78,20 +84,75 @@ const manrope = Manrope({
 });
 
 export default function Home() {
-  useEffect(() => {
-    const lenis = new Lenis({
-      smoothWheel: true,
-    });
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-  });
+  // this is lenis
+  // useEffect(() => {
+  //   const lenis = new Lenis({
+  //     smoothWheel: true,
+  //     duration: 3,
+  //   });
+  //   function raf(time: number) {
+  //     lenis.raf(time);
+  //     requestAnimationFrame(raf);
+  //   }
+  //   requestAnimationFrame(raf);
+  // });
 
+  // tokyo landing animation
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+
+    const tky = new SplitText(".tky", { type: "chars" });
+    const tkytxt = tky.chars;
+
+    const tkyDel = gsap.from(tkytxt, {
+      yPercent: 130,
+      stagger: 0.05,
+      ease: "power1.in",
+      duration: 0.5,
+      onComplete: () => {
+        tky.revert();
+        tkyDel.scrollTrigger?.kill();
+      },
+    });
+
+    const tkykanji = new SplitText(".tkykanji", { type: "chars" });
+    const tkykanjitxt = tkykanji.chars;
+
+    const tkykanjiDel = gsap.from(tkykanjitxt, {
+      yPercent: 130,
+      stagger: 0.05,
+      ease: "power1.in",
+      duration: 0.5,
+      onComplete: () => {tkykanji.revert(); tkykanjiDel.scrollTrigger?.kill();}      
+    });
+
+    const tkydesc = new SplitText(".tkydesc", { type: "words"});
+    const tkydesctxt = tkydesc.words;
+
+    const tkydescDel = gsap.from(tkydesctxt, {
+      yPercent: 130,
+      stagger: 0.05,
+      ease: "power1.in",
+      duration: 0.5,
+      onComplete: () => {tkydesc.revert(); tkydescDel.scrollTrigger?.kill();}      
+    });
+  }, []);
+
+  // smoothing
+  useEffect(() => {
+    const smoother = ScrollSmoother.create({
+      wrapper: "#maincont",
+      content: "#content",
+      smooth: 3,
+      smoothTouch: 1.5,
+      effects: true,
+    });
+  }, []);
+
+
+  
   // "the next station is akihabara" animations
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger, SplitText);
     ScrollTrigger.create({
       trigger: ".akbsect",
       start: "top top",
@@ -194,7 +255,6 @@ export default function Home() {
   // ueno next station animation
 
   useEffect(() => {
-
     ScrollTrigger.create({
       trigger: ".uenosect",
       start: "top top",
@@ -317,7 +377,6 @@ export default function Home() {
 
   // ikebukuro text split animation
   useEffect(() => {
-
     const splitikbkr = new SplitText(".ikbkrtxt", { type: "chars" });
     const splitikbkrtxt = splitikbkr.chars;
 
@@ -407,7 +466,6 @@ export default function Home() {
   // shinjuku text animation
 
   useEffect(() => {
-
     const sjkmain = new SplitText(".sjk11", { type: "chars" });
     const sjkmaintxt = sjkmain.chars;
 
@@ -495,7 +553,6 @@ export default function Home() {
 
   // yoyogi text animations
   useEffect(() => {
-
     const yyg = new SplitText(".yyg11", { type: "chars" });
     const yygtxt = yyg.chars;
 
@@ -723,28 +780,27 @@ export default function Home() {
     });
   }, []);
 
-
   // the next station is tokyo animations
   useEffect(() => {
     ScrollTrigger.create({
-      trigger:".tokyosect",
+      trigger: ".tokyosect",
       start: "top top",
       end: "bottom 80%",
       pin: true,
     });
 
     gsap.to(".tokyo1", {
-      scrollTrigger:{
+      scrollTrigger: {
         trigger: ".tokyocont",
         start: "top top",
         end: "bottom 80%",
         scrub: true,
       },
-      x: () => window.innerWidth* 1,
+      x: () => window.innerWidth * 1,
     });
 
     gsap.to(".tokyo2", {
-      scrollTrigger:{
+      scrollTrigger: {
         trigger: ".tokyocont",
         start: "top top",
         end: "bottom 80%",
@@ -752,11 +808,10 @@ export default function Home() {
       },
       x: () => -window.innerWidth * 1,
     });
-
   }, []);
 
   useEffect(() => {
-    const tokyomain = new SplitText(".tokyo11", {type: "chars"});
+    const tokyomain = new SplitText(".tokyo11", { type: "chars" });
     const tokyomaintxt = tokyomain.chars;
 
     const tokyomainDel = gsap.from(tokyomaintxt, {
@@ -764,14 +819,17 @@ export default function Home() {
       stagger: 0.05,
       ease: "power1.in",
       duration: 0.5,
-      scrollTrigger:{
+      scrollTrigger: {
         trigger: ".tokyo11",
-        start: "top 90%"
-      },      
-      onComplete: () => {tokyomain.revert(); tokyomainDel.scrollTrigger?.kill();}
+        start: "top 90%",
+      },
+      onComplete: () => {
+        tokyomain.revert();
+        tokyomainDel.scrollTrigger?.kill();
+      },
     });
 
-    const tokyokanji = new SplitText(".tokyo22", {type: "chars"});
+    const tokyokanji = new SplitText(".tokyo22", { type: "chars" });
     const tokyokanjitxt = tokyokanji.chars;
 
     const tokyokanjiDel = gsap.from(tokyokanjitxt, {
@@ -779,14 +837,17 @@ export default function Home() {
       stagger: 0.05,
       ease: "power1.in",
       duration: 0.5,
-      scrollTrigger:{
+      scrollTrigger: {
         trigger: ".tokyo22",
-        start: "top 90%"
-      },      
-      onComplete: () => {tokyokanji.revert(); tokyokanjiDel.scrollTrigger?.kill();}
+        start: "top 90%",
+      },
+      onComplete: () => {
+        tokyokanji.revert();
+        tokyokanjiDel.scrollTrigger?.kill();
+      },
     });
 
-    const tokyodescc = new SplitText(".tokyodesc", {type: "words"});
+    const tokyodescc = new SplitText(".tokyodesc", { type: "words" });
     const tokyodescctxt = tokyodescc.words;
 
     const tokyodesccDel = gsap.from(tokyodescctxt, {
@@ -794,26 +855,25 @@ export default function Home() {
       stagger: 0.02,
       ease: "power1.in",
       duration: 1,
-      scrollTrigger:{
+      scrollTrigger: {
         trigger: ".tokyodesc",
         start: "top 90%",
-      },      
-      onComplete: () => {tokyodescc.revert(); tokyodesccDel.scrollTrigger?.kill();}
+      },
+      onComplete: () => {
+        tokyodescc.revert();
+        tokyodesccDel.scrollTrigger?.kill();
+      },
     });
   }, []);
 
-
-
   return (
     <>
-      <main className="">
-        {/* Header Section */}
-        {/* <Header /> */}
-        {/* END OF HEADER*/}
+      <main id="wrapper" className="w-full h-auto overflow-hidden">
         <div
-          className={`${instrumentSans.variable} ${urbanist.variable} ${nunitoSans.variable} ${notosansjp.variable} ${manrope.variable}  w-auto h-auto`}
+          className={`${instrumentSans.variable} ${urbanist.variable} ${nunitoSans.variable} ${notosansjp.variable} ${manrope.variable}  w-auto h-auto `}
+          id="content"
         >
-          <div className="flex justify-start items-center h-[100vh] w-full relative">
+          <div className=" flex justify-start items-center h-[100vh] w-full relative">
             <Image
               src={myImage}
               alt="TokyoStation"
@@ -822,14 +882,16 @@ export default function Home() {
               style={{ objectFit: "cover" }}
               className="brightness-55"
             />
-            <div className="absolute text-white font-urbanist text-6xl px-7">
-              <p data-lenis-speed="2" className="tky font-bold">
-                Tokyo
-              </p>
-              <p className="tky text-3xl">東京</p>
-              <div className="text-[18px] pt-70">
-                <p className="tky">
-                  Exploring Tokyo City through the Yamanote Line
+            <div className="relative text-white font-urbanist text-6xl px-7 lg:px-10">
+              <div className="flex overflow-hidden">
+                <p className="tky font-bold">Tokyo</p>
+              </div>
+              <div className="flex overflow-hidden">
+                <p className="tkykanji text-3xl">東京</p>
+              </div>
+              <div className="tkydesc flex overflow-hidden pt-72 lg:pt-63 text-[18px] lg:text-[24px]  ">
+                <p className="">
+                  Travel in Tokyo City through the Yamanote Line Outer Loop
                 </p>
               </div>
             </div>
@@ -862,7 +924,7 @@ export default function Home() {
               style={{ objectFit: "cover" }}
               className="brightness-55"
             />
-            <div className="relative text-white font-urbanist text-6xl px-7">
+            <div className="relative text-white font-urbanist text-6xl px-7 lg:px-10">
               <div className="flex overflow-hidden">
                 <p className="akb">Akihabara</p>
               </div>
@@ -870,7 +932,7 @@ export default function Home() {
                 <p className="akb-kanji text-3xl">秋葉原</p>
               </div>
 
-              <div className="akbdesc text-[18px] pt-70 flex overflow-hidden">
+              <div className="akbdesc text-[18px] pt-70 lg:pt-60 flex overflow-hidden lg:text-[24px]">
                 <p>
                   Located at Chiyoda Ward, Tokyo. Akihabara is known for being a
                   holy land for Electronics, Video Games, and Anime Culture
@@ -905,7 +967,7 @@ export default function Home() {
               style={{ objectFit: "cover" }}
               className="brightness-60"
             />
-            <div className="relative text-white font-urbanist text-6xl px-7">
+            <div className="relative text-white font-urbanist text-6xl px-7 lg:px-10">
               <div className="flex overflow-hidden">
                 <p className="uenotxt">Ueno</p>
               </div>
@@ -913,7 +975,7 @@ export default function Home() {
                 <p className="uenokanji text-3xl">上野</p>
               </div>
 
-              <div className="uenodesc text-[19px] pt-90 flex overflow-hidden">
+              <div className="uenodesc text-[19px] lg:text-[24px] pt-65 lg:pt-60 flex overflow-hidden">
                 <p>
                   Located in Taito Ward, Ueno is famous for its bustling Ameyoko
                   Market, the Sakura tree columns of Ueno Park, alongside with
@@ -932,10 +994,10 @@ export default function Home() {
               className="absolute"
             />
             <div className="ikbkrcont w-full h-[100vh] flex flex-col relative overflow-hidden">
-              <div className="ikbkr1 text-red-500 text-7xl bg-white flex-1 flex justify-center items-center border-black border-b-6">
+              <div className="ikbkr1 text-red-500 text-7xl bg-white flex-1 flex justify-center items-center border-black border-b-4">
                 <p>次は</p>
               </div>
-              <div className="ikbkr2 text-white text-7xl bg-red-500 flex flex-1 justify-center items-center border-black border-t-6">
+              <div className="ikbkr2 text-white text-7xl bg-red-500 flex flex-1 justify-center items-center border-black border-t-4">
                 <p>池袋</p>
               </div>
             </div>
@@ -1012,7 +1074,7 @@ export default function Home() {
                 <p>新宿</p>
               </div>
 
-              <div className="sjkdesc text-[19px] flex overflow-hidden pt-80">
+              <div className="sjkdesc text-[19px] flex overflow-hidden pt-70">
                 <p>
                   Shinjuku, located in Shinjuku Ward, Home to the one of the
                   Busiest Train Stations in the World and known for its busy
@@ -1032,15 +1094,15 @@ export default function Home() {
               placeholder="blur"
             />
             <div className="yygcont w-full h-[100vh] flex relative overflow-hidden text-7xl text-white gap-0">
-              <div className="yyg1 flex flex-1 justify-center items-center bg-[#507d2e] border-r-[#553b27] border">
-                <div className="flex flex-col p-4 rounded-lg bg-[#8B5E3C]">
+              <div className="yyg1 flex flex-1 justify-center items-center bg-[#f9f9f9] ">
+                <div className="flex flex-col p-4 rounded-lg text-[#b5d200]">
                   <p>代</p>
                   <p>々</p>
                   <p>木</p>
                 </div>
               </div>
-              <div className="yyg2 flex flex-1 justify-center items-center bg-[#8B5E3C] border-l-[#553b27] border">
-                <div className="flex flex-col p-4 rounded-lg bg-[#507d2e]">
+              <div className="yyg2 flex flex-1 justify-center items-center bg-[#b5d200]">
+                <div className="flex flex-col p-4 rounded-lg text-[#f9f9f9]">
                   <p>次</p>
                   <p>は</p>
                 </div>
@@ -1070,7 +1132,7 @@ export default function Home() {
               >
                 <p>代々木</p>
               </div>
-              <div className="yygdesc flex overflow-hidden text-[19px] pt-80">
+              <div className="yygdesc flex overflow-hidden text-[19px] pt-70">
                 <p>
                   Situated in Shibuya Ward, Yoyogi Park offers a peaceful escape
                   from the city&apos;s bustle. Enjoy the serene atmosphere, lush
@@ -1192,7 +1254,7 @@ export default function Home() {
               style={{ objectFit: "cover" }}
               className="absolute"
               placeholder="blur"
-            />              
+            />
             <div className="tokyocont w-full h-[100vh] flex flex-col relative overflow-hidden text-7xl text-white gap-0">
               <div className="tokyo1 flex flex-1 justify-center items-center bg-black/50">
                 <p>次は</p>
@@ -1213,19 +1275,29 @@ export default function Home() {
               placeholder="blur"
             />
             <div className="relative text-white font-urbanist text-6xl px-7">
-              <div className="tokyo11 flex overflow-hidden " style={{ height: "1.2em" }}>
+              <div
+                className="tokyo11 flex overflow-hidden "
+                style={{ height: "1.2em" }}
+              >
                 <p>Tokyo</p>
               </div>
-              <div className="tokyo22 flex overflow-hidden text-3xl " style={{ height: "1.2em" }}>
+              <div
+                className="tokyo22 flex overflow-hidden text-3xl "
+                style={{ height: "1.2em" }}
+              >
                 <p>東京</p>
               </div>
               <div className="tokyodesc flex overflow-hidden pt-70 text-[19px]">
-                <p>Located in Chiyoda Ward, Tokyo Station is a transport hub of Shinkansen and the entry point of anyone going in or out of Tokyo</p>
-              </div>          
+                <p>
+                  Located in Chiyoda Ward, Tokyo Station is a transport hub of
+                  Shinkansen and the entry point of anyone going in or out of
+                  Tokyo
+                </p>
+              </div>
             </div>
           </div>
+          <Footer />
         </div>
-        <Footer />
       </main>
     </>
   );
