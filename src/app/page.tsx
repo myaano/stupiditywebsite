@@ -140,7 +140,7 @@ export default function Home() {
 
   // smoothing
   useEffect(() => {
-    const smoother = ScrollSmoother.create({
+    ScrollSmoother.create({
       wrapper: "#maincont",
       content: "#content",
       smooth: 3,
