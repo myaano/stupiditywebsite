@@ -3,7 +3,7 @@
 {
   /* DEPENDENCIES */
 }
-// import Lenis from "lenis";
+import Lenis from "lenis";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -86,22 +86,21 @@ const manrope = Manrope({
 
 export default function Home() {
   // this is lenis
-  // useEffect(() => {
-  //   const lenis = new Lenis({
-  //     smoothWheel: true,
-  //     duration: 3,
-  //   });
-  //   function raf(time: number) {
-  //     lenis.raf(time);
-  //     requestAnimationFrame(raf);
-  //   }
-  //   requestAnimationFrame(raf);
-  // });
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+    const lenis = new Lenis({
+      smoothWheel: true,
+      duration: 3,
+    });
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  }, []);
 
   // tokyo landing animation
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
-
     const tky = new SplitText(".tky", { type: "chars" });
     const tkytxt = tky.chars;
 
@@ -142,17 +141,6 @@ export default function Home() {
         tkydesc.revert();
         tkydescDel.scrollTrigger?.kill();
       },
-    });
-  }, []);
-
-  // smoothing
-  useEffect(() => {
-    ScrollSmoother.create({
-      wrapper: "#maincont",
-      content: "#content",
-      smooth: 3,
-      smoothTouch: 1.5,
-      effects: true,
     });
   }, []);
 
@@ -874,436 +862,433 @@ export default function Home() {
   return (
     <>
       {/* Head removed: now handled by app/head.tsx */}
-      <main id="wrapper" className="w-full h-auto overflow-hidden">
-        <div
-          className={`${instrumentSans.variable} ${urbanist.variable} ${nunitoSans.variable} ${notosansjp.variable} ${manrope.variable}  w-auto h-auto `}
-          id="content"
-        >
-          <div className=" flex justify-start items-center h-[100vh] w-full relative">
-            <Image
-              src={myImage}
-              alt="TokyoStation"
-              sizes="100vw"
-              fill
-              style={{ objectFit: "cover" }}
-              className="brightness-55"
-            />
-            <div className="relative text-white font-urbanist text-6xl px-7 lg:px-10">
-              <div className="flex overflow-hidden">
-                <p className="tky font-bold">Tokyo</p>
-              </div>
-              <div className="flex overflow-hidden">
-                <p className="tkykanji text-3xl">東京</p>
-              </div>
-              <div className="tkydesc flex overflow-hidden pt-72 lg:pt-63 text-[18px] lg:text-[24px]  ">
-                <p className="">
-                  Travel in Tokyo City through the Yamanote Line Outer Loop
-                </p>
-              </div>
+      <main
+        className={`w-full min-h-screen overflow-hidden ${instrumentSans.variable} ${urbanist.variable} ${nunitoSans.variable} ${notosansjp.variable} ${manrope.variable}`}
+      >
+        <div className="flex justify-start items-center h-screen w-full relative">
+          <Image
+            src={myImage}
+            alt="TokyoStation"
+            sizes="100vw"
+            fill
+            style={{ objectFit: "cover" }}
+            className="brightness-55"
+          />
+          <div className="relative text-white font-urbanist text-6xl px-7 lg:px-10">
+            <div className="flex overflow-hidden">
+              <p className="tky font-bold">Tokyo</p>
+            </div>
+            <div className="flex overflow-hidden">
+              <p className="tkykanji text-3xl">東京</p>
+            </div>
+            <div className="tkydesc flex overflow-hidden pt-72 lg:pt-63 text-[18px] lg:text-[24px]  ">
+              <p className="">
+                Travel in Tokyo City through the Yamanote Line Outer Loop
+              </p>
             </div>
           </div>
-          <section className="akbsect relative w-auto h-auto">
-            <Image
-              src={figurines}
-              alt="figurines"
-              sizes="100vw"
-              fill
-              style={{ objectFit: "cover" }}
-              className="absolute"
-              placeholder="blur"
-            />
-            <div className="bgakiba w-full h-[100vh] flex flex-col overflow-x-hidden ">
-              <div className="akibatxt1 text-7xl text-white flex-1 flex justify-start items-center bg-yellow-500 rounded-l-xl">
-                <p>次は</p>
-              </div>
-              <div className="akibatxt2 text-7xl text-white flex-1 flex justify-end items-center bg-green-500 rounded-r-xl">
-                <p>秋葉原</p>
-              </div>
-            </div>
-          </section>
-          <div className="flex justify-start items-center h-[100vh] w-full relative">
-            <Image
-              src={akiba}
-              alt="akihabara"
-              sizes="100vw"
-              fill
-              style={{ objectFit: "cover" }}
-              className="brightness-55"
-            />
-            <div className="relative text-white font-urbanist text-6xl px-7 lg:px-10">
-              <div className="flex overflow-hidden">
-                <p className="akb">Akihabara</p>
-              </div>
-              <div className="flex overflow-hidden">
-                <p className="akb-kanji text-3xl">秋葉原</p>
-              </div>
-
-              <div className="akbdesc text-[18px] pt-70 lg:pt-60 flex overflow-hidden lg:text-[24px]">
-                <p>
-                  Located at Chiyoda Ward, Tokyo. Akihabara is known for being a
-                  holy land for Electronics, Video Games, and Anime Culture
-                </p>
-              </div>
-            </div>
-          </div>
-          <section className="uenosect relative w-full h-[100vh]">
-            <Image
-              src={uenoskr1}
-              alt="uenopark"
-              sizes="100vw"
-              fill
-              style={{ objectFit: "cover" }}
-              className="absolute"
-            />
-            <div className="uenocont w-full h-[100vh] flex flex-col relative overflow-hidden">
-              <div className="uenost1 text-white font-urbanist text-7xl bg-[#ffe7de80] flex flex-1 justify-end items-center">
-                <p>次は</p>
-              </div>
-              <div className="uenost2 text-white font-urbanist text-7xl bg-[#3B6E3B80] flex-1 flex justify-start items-center">
-                <p>上野</p>
-              </div>
-            </div>
-          </section>
-          <div className="flex justify-start items-center h-[100vh] w-full relative">
-            <Image
-              src={ameyoko}
-              alt="ameyoko-market"
-              sizes="100vw"
-              fill
-              style={{ objectFit: "cover" }}
-              className="brightness-60"
-            />
-            <div className="relative text-white font-urbanist text-6xl px-7 lg:px-10">
-              <div className="flex overflow-hidden">
-                <p className="uenotxt">Ueno</p>
-              </div>
-              <div className="flex overflow-hidden">
-                <p className="uenokanji text-3xl">上野</p>
-              </div>
-
-              <div className="uenodesc text-[19px] lg:text-[24px] pt-65 lg:pt-60 flex overflow-hidden">
-                <p>
-                  Located in Taito Ward, Ueno is famous for its bustling Ameyoko
-                  Market, the Sakura tree columns of Ueno Park, alongside with
-                  it is Tokyo National Museum
-                </p>
-              </div>
-            </div>
-          </div>
-          <section className="ikbkrsect relative w-full h-[100vh]">
-            <Image
-              src={pokecenter}
-              alt="pokemon"
-              sizes="100vw"
-              fill
-              style={{ objectFit: "cover" }}
-              className="absolute"
-            />
-            <div className="ikbkrcont w-full h-[100vh] flex flex-col relative overflow-hidden">
-              <div className="ikbkr1 text-red-500 text-7xl bg-white flex-1 flex justify-center items-center border-black border-b-4">
-                <p>次は</p>
-              </div>
-              <div className="ikbkr2 text-white text-7xl bg-red-500 flex flex-1 justify-center items-center border-black border-t-4">
-                <p>池袋</p>
-              </div>
-            </div>
-          </section>
-          <div className="flex justify-start items-center h-[100vh] w-full relative">
-            <Image
-              src={suncity}
-              alt="sunshine city mall"
-              sizes="100vw"
-              fill
-              style={{ objectFit: "cover" }}
-              className="brightness-50"
-              placeholder="blur"
-            />
-            <div className="relative text-white font-urbanist text-6xl px-7">
-              <div className="flex overflow-hidden">
-                <p className="ikbkrtxt">Ikebukuro</p>
-              </div>
-              <div className="flex overflow-hidden">
-                <p className="ikbkrkanji text-3xl">池袋</p>
-              </div>
-              <div className="ikbkrdesc text-[19px] flex overflow-hidden pt-60">
-                <p>
-                  Located in Toshima Ward, Tokyo. Ikebukuro is known for
-                  Shopping, Cafes, and Pokémon Center in Sunshine City Mall and
-                  its Aquarium
-                </p>
-              </div>
-            </div>
-          </div>
-          <section className="sjksect relative w-full h-[100vh]">
-            <Image
-              src={shinjukubridge}
-              alt="shinjukubridge"
-              sizes="100vw"
-              fill
-              style={{ objectFit: "cover" }}
-              className="absolute"
-              placeholder="blur"
-            />
-            <div className="sjkcont w-full h-[100vh] flex relative overflow-hidden text-7xl text-white">
-              <div className="sjk1 flex bg-black/50 flex-1 justify-center items-center">
-                <div className="flex flex-col bg-[#E6002680] p-4 rounded-lg">
-                  <p>新</p>
-                  <p>宿</p>
-                </div>
-              </div>
-              <div className="sjk2 bg-black/50 flex flex-col flex-1 justify-center items-center">
-                <div className="flex flex-col bg-[#0C1A4A80] p-4 rounded-lg">
-                  <p>次</p>
-                  <p>は</p>
-                </div>
-              </div>
-            </div>
-          </section>
-          <div className="flex justify-start items-center h-[100vh] w-full relative">
-            <Image
-              src={sjk}
-              alt="kabukicho"
-              sizes="100vw"
-              fill
-              style={{ objectFit: "cover" }}
-              className="brightness-50"
-              placeholder="blur"
-            />
-            <div className="relative text-white font-urbanist text-6xl px-7">
-              <div
-                className="sjk11 flex overflow-hidden"
-                style={{ height: "1.2em" }}
-              >
-                <p>Shinjuku</p>
-              </div>
-              <div className="sjk22 flex overflow-hidden text-3xl">
-                <p>新宿</p>
-              </div>
-
-              <div className="sjkdesc text-[19px] flex overflow-hidden pt-70">
-                <p>
-                  Shinjuku, located in Shinjuku Ward, Home to the one of the
-                  Busiest Train Stations in the World and known for its busy
-                  night life with multiple clubs and bars around Shinjuku
-                </p>
-              </div>
-            </div>
-          </div>
-          <section className="yygsect relative w-full h-[100vh]">
-            <Image
-              src={yygpark}
-              alt="yoyogi-park"
-              sizes="100vw"
-              fill
-              style={{ objectFit: "cover" }}
-              className="absolute"
-              placeholder="blur"
-            />
-            <div className="yygcont w-full h-[100vh] flex relative overflow-hidden text-7xl text-white gap-0">
-              <div className="yyg1 flex flex-1 justify-center items-center bg-[#f9f9f9] ">
-                <div className="flex flex-col p-4 rounded-lg text-[#b5d200]">
-                  <p>代</p>
-                  <p>々</p>
-                  <p>木</p>
-                </div>
-              </div>
-              <div className="yyg2 flex flex-1 justify-center items-center bg-[#b5d200]">
-                <div className="flex flex-col p-4 rounded-lg text-[#f9f9f9]">
-                  <p>次</p>
-                  <p>は</p>
-                </div>
-              </div>
-            </div>
-          </section>
-          <div className="flex justify-start items-center h-[100vh] w-full relative">
-            <Image
-              src={meiji}
-              alt="meiji jingu"
-              sizes="100vw"
-              fill
-              style={{ objectFit: "cover" }}
-              className="brightness-50"
-              placeholder="blur"
-            />
-            <div className="relative text-white font-urbanist text-6xl px-7">
-              <div
-                className="yyg11 flex overflow-hidden "
-                style={{ height: "1.2em" }}
-              >
-                <p>Yoyogi</p>
-              </div>
-              <div
-                className="yyg22 flex overflow-hidden text-3xl"
-                style={{ height: "1.2em" }}
-              >
-                <p>代々木</p>
-              </div>
-              <div className="yygdesc flex overflow-hidden text-[19px] pt-70">
-                <p>
-                  Situated in Shibuya Ward, Yoyogi Park offers a peaceful escape
-                  from the city&apos;s bustle. Enjoy the serene atmosphere, lush
-                  greenery, and discover the historic Meiji Jingu Shrine just
-                  next door.
-                </p>
-              </div>
-            </div>
-          </div>
-          <section className="shbysect relative w-full h-[100vh]">
-            <Image
-              src={crossing}
-              alt="shibuya crossing"
-              sizes="100vw"
-              fill
-              style={{ objectFit: "cover" }}
-              className="absolute"
-              placeholder="blur"
-            />
-            <div className="shbycont w-full h-[100vh] flex flex-col relative overflow-hidden text-7xl text-white gap-0">
-              <div className="shby1 flex flex-1 justify-center items-center bg-black/50">
-                <p>次は</p>
-              </div>
-              <div className="shby2 flex flex-1 justify-center items-center bg-black/50">
-                <p>渋谷</p>
-              </div>
-            </div>
-          </section>
-          <div className="flex justify-start items-center h-[100vh] w-full relative">
-            <Image
-              src={takeshita}
-              alt="takeshita street"
-              sizes="100vw"
-              fill
-              style={{ objectFit: "cover" }}
-              className="brightness-50"
-              placeholder="blur"
-            />
-            <div className="relative text-white font-urbanist text-6xl px-7">
-              <div
-                className="shby11 flex overflow-hidden "
-                style={{ height: "1.2em" }}
-              >
-                <p>Shibuya</p>
-              </div>
-              <div
-                className="shby22 flex overflow-hidden text-3xl "
-                style={{ height: "1.2em" }}
-              >
-                <p>渋谷</p>
-              </div>
-              <div className="shbydesc flex overflow-hidden pt-50 text-[19px]">
-                <p>
-                  Located in Shibuya Ward, Shibuya is renowned for its vibrant
-                  nightlife, iconic scramble crossing, and as a major shopping
-                  and entertainment district filled with fashion boutiques,
-                  cafes, bars, clubs, and izakayas.
-                </p>
-              </div>
-            </div>
-          </div>
-          <section className="shinbasect relative w-full h-[100vh]">
-            <Image
-              src={shinbashi}
-              alt="shinbashi"
-              sizes="100vw"
-              fill
-              style={{ objectFit: "cover" }}
-              className="absolute"
-              placeholder="blur"
-            />
-            <div className="shinbacont w-full h-[100vh] flex flex-col relative overflow-hidden text-7xl text-white gap-0">
-              <div className="shinba1 flex flex-1 justify-center items-center bg-black/50">
-                <p>次は</p>
-              </div>
-              <div className="shinba2 flex flex-1 justify-center items-center bg-black/50">
-                <p>新橋</p>
-              </div>
-            </div>
-          </section>
-          <div className="flex justify-start items-center h-[100vh] w-full relative">
-            <Image
-              src={shinbashi2}
-              alt="shinbashi dori"
-              sizes="100vw"
-              fill
-              style={{ objectFit: "cover" }}
-              className="brightness-50"
-              placeholder="blur"
-            />
-            <div className="relative text-white font-urbanist text-6xl px-7">
-              <div
-                className="shinba11 flex overflow-hidden "
-                style={{ height: "1.2em" }}
-              >
-                <p>Shinbashi</p>
-              </div>
-              <div
-                className="shinba22 flex overflow-hidden text-3xl"
-                style={{ height: "1.2em" }}
-              >
-                <p>新橋</p>
-              </div>
-              <div className="shinbadesc flex overflow-hidden pt-70 text-[19px]">
-                <p>
-                  Shinbashi, in Minato Ward, is famous for its lively izakayas
-                  and after-work crowd. Follow the salarymen for great food,
-                  drinks, and a taste of Tokyo&apos;s vibrant nightlife.
-                </p>
-              </div>
-            </div>
-          </div>
-          <section className="tokyosect relative w-full h-[100vh]">
-            <Image
-              src={station}
-              alt="tokyo station"
-              sizes="100vw"
-              fill
-              style={{ objectFit: "cover" }}
-              className="absolute"
-              placeholder="blur"
-            />
-            <div className="tokyocont w-full h-[100vh] flex flex-col relative overflow-hidden text-7xl text-white gap-0">
-              <div className="tokyo1 flex flex-1 justify-center items-center bg-black/50">
-                <p>次は</p>
-              </div>
-              <div className="tokyo2 flex flex-1 justify-center items-center bg-black/50">
-                <p>東京</p>
-              </div>
-            </div>
-          </section>
-          <div className="flex justify-start items-center h-[100vh] w-full relative">
-            <Image
-              src={castle}
-              alt="Imperial Palace"
-              sizes="100vw"
-              fill
-              style={{ objectFit: "cover" }}
-              className="brightness-50"
-              placeholder="blur"
-            />
-            <div className="relative text-white font-urbanist text-6xl px-7">
-              <div
-                className="tokyo11 flex overflow-hidden "
-                style={{ height: "1.2em" }}
-              >
-                <p>Tokyo</p>
-              </div>
-              <div
-                className="tokyo22 flex overflow-hidden text-3xl "
-                style={{ height: "1.2em" }}
-              >
-                <p>東京</p>
-              </div>
-              <div className="tokyodesc flex overflow-hidden pt-70 text-[19px]">
-                <p>
-                  Located in Chiyoda Ward, Tokyo Station is a transport hub of
-                  Shinkansen and the entry point of anyone going in or out of
-                  Tokyo
-                </p>
-              </div>
-            </div>
-          </div>
-          <Footer />
         </div>
+        <section className="akbsect relative w-full h-screen">
+          <Image
+            src={figurines}
+            alt="figurines"
+            sizes="100vw"
+            fill
+            style={{ objectFit: "cover" }}
+            className="absolute"
+            placeholder="blur"
+          />
+          <div className="bgakiba w-full h-full flex flex-col overflow-x-hidden">
+            <div className="akibatxt1 text-7xl text-white flex-1 flex justify-start items-center bg-yellow-500 rounded-l-xl">
+              <p>次は</p>
+            </div>
+            <div className="akibatxt2 text-7xl text-white flex-1 flex justify-end items-center bg-green-500 rounded-r-xl">
+              <p>秋葉原</p>
+            </div>
+          </div>
+        </section>
+        <div className="flex justify-start items-center h-screen w-full relative">
+          <Image
+            src={akiba}
+            alt="akihabara"
+            sizes="100vw"
+            fill
+            style={{ objectFit: "cover" }}
+            className="brightness-55"
+          />
+          <div className="relative text-white font-urbanist text-6xl px-7 lg:px-10">
+            <div className="flex overflow-hidden">
+              <p className="akb">Akihabara</p>
+            </div>
+            <div className="flex overflow-hidden">
+              <p className="akb-kanji text-3xl">秋葉原</p>
+            </div>
+
+            <div className="akbdesc text-[18px] pt-70 lg:pt-60 flex overflow-hidden lg:text-[24px]">
+              <p>
+                Located at Chiyoda Ward, Tokyo. Akihabara is known for being a
+                holy land for Electronics, Video Games, and Anime Culture
+              </p>
+            </div>
+          </div>
+        </div>
+        <section className="uenosect relative w-full h-screen">
+          <Image
+            src={uenoskr1}
+            alt="uenopark"
+            sizes="100vw"
+            fill
+            style={{ objectFit: "cover" }}
+            className="absolute"
+          />
+          <div className="uenocont w-full h-full flex flex-col relative overflow-hidden">
+            <div className="uenost1 text-white font-urbanist text-7xl bg-[#ffe7de80] flex flex-1 justify-end items-center">
+              <p>次は</p>
+            </div>
+            <div className="uenost2 text-white font-urbanist text-7xl bg-[#3B6E3B80] flex-1 flex justify-start items-center">
+              <p>上野</p>
+            </div>
+          </div>
+        </section>
+        <div className="flex justify-start items-center h-screen w-full relative">
+          <Image
+            src={ameyoko}
+            alt="ameyoko-market"
+            sizes="100vw"
+            fill
+            style={{ objectFit: "cover" }}
+            className="brightness-60"
+          />
+          <div className="relative text-white font-urbanist text-6xl px-7 lg:px-10">
+            <div className="flex overflow-hidden">
+              <p className="uenotxt">Ueno</p>
+            </div>
+            <div className="flex overflow-hidden">
+              <p className="uenokanji text-3xl">上野</p>
+            </div>
+
+            <div className="uenodesc text-[19px] lg:text-[24px] pt-65 lg:pt-60 flex overflow-hidden">
+              <p>
+                Located in Taito Ward, Ueno is famous for its bustling Ameyoko
+                Market, the Sakura tree columns of Ueno Park, alongside with it
+                is Tokyo National Museum
+              </p>
+            </div>
+          </div>
+        </div>
+        <section className="ikbkrsect relative w-full h-screen">
+          <Image
+            src={pokecenter}
+            alt="pokemon"
+            sizes="100vw"
+            fill
+            style={{ objectFit: "cover" }}
+            className="absolute"
+          />
+          <div className="ikbkrcont w-full h-full flex flex-col relative overflow-hidden">
+            <div className="ikbkr1 text-red-500 text-7xl bg-white flex-1 flex justify-center items-center border-black border-b-4">
+              <p>次は</p>
+            </div>
+            <div className="ikbkr2 text-white text-7xl bg-red-500 flex flex-1 justify-center items-center border-black border-t-4">
+              <p>池袋</p>
+            </div>
+          </div>
+        </section>
+        <div className="flex justify-start items-center h-screen w-full relative">
+          <Image
+            src={suncity}
+            alt="sunshine city mall"
+            sizes="100vw"
+            fill
+            style={{ objectFit: "cover" }}
+            className="brightness-50"
+            placeholder="blur"
+          />
+          <div className="relative text-white font-urbanist text-6xl px-7">
+            <div className="flex overflow-hidden">
+              <p className="ikbkrtxt">Ikebukuro</p>
+            </div>
+            <div className="flex overflow-hidden">
+              <p className="ikbkrkanji text-3xl">池袋</p>
+            </div>
+            <div className="ikbkrdesc text-[19px] flex overflow-hidden pt-60">
+              <p>
+                Located in Toshima Ward, Tokyo. Ikebukuro is known for Shopping,
+                Cafes, and Pokémon Center in Sunshine City Mall and its Aquarium
+              </p>
+            </div>
+          </div>
+        </div>
+        <section className="sjksect relative w-full h-screen">
+          <Image
+            src={shinjukubridge}
+            alt="shinjukubridge"
+            sizes="100vw"
+            fill
+            style={{ objectFit: "cover" }}
+            className="absolute"
+            placeholder="blur"
+          />
+          <div className="sjkcont w-full h-full flex relative overflow-hidden text-7xl text-white">
+            <div className="sjk1 flex bg-black/50 flex-1 justify-center items-center">
+              <div className="flex flex-col bg-[#E6002680] p-4 rounded-lg">
+                <p>新</p>
+                <p>宿</p>
+              </div>
+            </div>
+            <div className="sjk2 bg-black/50 flex flex-col flex-1 justify-center items-center">
+              <div className="flex flex-col bg-[#0C1A4A80] p-4 rounded-lg">
+                <p>次</p>
+                <p>は</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div className="flex justify-start items-center h-screen w-full relative">
+          <Image
+            src={sjk}
+            alt="kabukicho"
+            sizes="100vw"
+            fill
+            style={{ objectFit: "cover" }}
+            className="brightness-50"
+            placeholder="blur"
+          />
+          <div className="relative text-white font-urbanist text-6xl px-7">
+            <div
+              className="sjk11 flex overflow-hidden"
+              style={{ height: "1.2em" }}
+            >
+              <p>Shinjuku</p>
+            </div>
+            <div className="sjk22 flex overflow-hidden text-3xl">
+              <p>新宿</p>
+            </div>
+
+            <div className="sjkdesc text-[19px] flex overflow-hidden pt-70">
+              <p>
+                Shinjuku, located in Shinjuku Ward, Home to the one of the
+                Busiest Train Stations in the World and known for its busy night
+                life with multiple clubs and bars around Shinjuku
+              </p>
+            </div>
+          </div>
+        </div>
+        <section className="yygsect relative w-full h-screen">
+          <Image
+            src={yygpark}
+            alt="yoyogi-park"
+            sizes="100vw"
+            fill
+            style={{ objectFit: "cover" }}
+            className="absolute"
+            placeholder="blur"
+          />
+          <div className="yygcont w-full h-full flex relative overflow-hidden text-7xl text-white gap-0">
+            <div className="yyg1 flex flex-1 justify-center items-center bg-[#f9f9f9] ">
+              <div className="flex flex-col p-4 rounded-lg text-[#b5d200]">
+                <p>代</p>
+                <p>々</p>
+                <p>木</p>
+              </div>
+            </div>
+            <div className="yyg2 flex flex-1 justify-center items-center bg-[#b5d200]">
+              <div className="flex flex-col p-4 rounded-lg text-[#f9f9f9]">
+                <p>次</p>
+                <p>は</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div className="flex justify-start items-center h-screen w-full relative">
+          <Image
+            src={meiji}
+            alt="meiji jingu"
+            sizes="100vw"
+            fill
+            style={{ objectFit: "cover" }}
+            className="brightness-50"
+            placeholder="blur"
+          />
+          <div className="relative text-white font-urbanist text-6xl px-7">
+            <div
+              className="yyg11 flex overflow-hidden "
+              style={{ height: "1.2em" }}
+            >
+              <p>Yoyogi</p>
+            </div>
+            <div
+              className="yyg22 flex overflow-hidden text-3xl"
+              style={{ height: "1.2em" }}
+            >
+              <p>代々木</p>
+            </div>
+            <div className="yygdesc flex overflow-hidden text-[19px] pt-70">
+              <p>
+                Situated in Shibuya Ward, Yoyogi Park offers a peaceful escape
+                from the city&apos;s bustle. Enjoy the serene atmosphere, lush
+                greenery, and discover the historic Meiji Jingu Shrine just next
+                door.
+              </p>
+            </div>
+          </div>
+        </div>
+        <section className="shbysect relative w-full h-screen">
+          <Image
+            src={crossing}
+            alt="shibuya crossing"
+            sizes="100vw"
+            fill
+            style={{ objectFit: "cover" }}
+            className="absolute"
+            placeholder="blur"
+          />
+          <div className="shbycont w-full h-full flex flex-col relative overflow-hidden text-7xl text-white gap-0">
+            <div className="shby1 flex flex-1 justify-center items-center bg-black/50">
+              <p>次は</p>
+            </div>
+            <div className="shby2 flex flex-1 justify-center items-center bg-black/50">
+              <p>渋谷</p>
+            </div>
+          </div>
+        </section>
+        <div className="flex justify-start items-center h-screen w-full relative">
+          <Image
+            src={takeshita}
+            alt="takeshita street"
+            sizes="100vw"
+            fill
+            style={{ objectFit: "cover" }}
+            className="brightness-50"
+            placeholder="blur"
+          />
+          <div className="relative text-white font-urbanist text-6xl px-7">
+            <div
+              className="shby11 flex overflow-hidden "
+              style={{ height: "1.2em" }}
+            >
+              <p>Shibuya</p>
+            </div>
+            <div
+              className="shby22 flex overflow-hidden text-3xl "
+              style={{ height: "1.2em" }}
+            >
+              <p>渋谷</p>
+            </div>
+            <div className="shbydesc flex overflow-hidden pt-50 text-[19px]">
+              <p>
+                Located in Shibuya Ward, Shibuya is renowned for its vibrant
+                nightlife, iconic scramble crossing, and as a major shopping and
+                entertainment district filled with fashion boutiques, cafes,
+                bars, clubs, and izakayas.
+              </p>
+            </div>
+          </div>
+        </div>
+        <section className="shinbasect relative w-full h-screen">
+          <Image
+            src={shinbashi}
+            alt="shinbashi"
+            sizes="100vw"
+            fill
+            style={{ objectFit: "cover" }}
+            className="absolute"
+            placeholder="blur"
+          />
+          <div className="shinbacont w-full h-full flex flex-col relative overflow-hidden text-7xl text-white gap-0">
+            <div className="shinba1 flex flex-1 justify-center items-center bg-black/50">
+              <p>次は</p>
+            </div>
+            <div className="shinba2 flex flex-1 justify-center items-center bg-black/50">
+              <p>新橋</p>
+            </div>
+          </div>
+        </section>
+        <div className="flex justify-start items-center h-screen w-full relative">
+          <Image
+            src={shinbashi2}
+            alt="shinbashi dori"
+            sizes="100vw"
+            fill
+            style={{ objectFit: "cover" }}
+            className="brightness-50"
+            placeholder="blur"
+          />
+          <div className="relative text-white font-urbanist text-6xl px-7">
+            <div
+              className="shinba11 flex overflow-hidden "
+              style={{ height: "1.2em" }}
+            >
+              <p>Shinbashi</p>
+            </div>
+            <div
+              className="shinba22 flex overflow-hidden text-3xl"
+              style={{ height: "1.2em" }}
+            >
+              <p>新橋</p>
+            </div>
+            <div className="shinbadesc flex overflow-hidden pt-70 text-[19px]">
+              <p>
+                Shinbashi, in Minato Ward, is famous for its lively izakayas and
+                after-work crowd. Follow the salarymen for great food, drinks,
+                and a taste of Tokyo&apos;s vibrant nightlife.
+              </p>
+            </div>
+          </div>
+        </div>
+        <section className="tokyosect relative w-full h-screen">
+          <Image
+            src={station}
+            alt="tokyo station"
+            sizes="100vw"
+            fill
+            style={{ objectFit: "cover" }}
+            className="absolute"
+            placeholder="blur"
+          />
+          <div className="tokyocont w-full h-full flex flex-col relative overflow-hidden text-7xl text-white gap-0">
+            <div className="tokyo1 flex flex-1 justify-center items-center bg-black/50">
+              <p>次は</p>
+            </div>
+            <div className="tokyo2 flex flex-1 justify-center items-center bg-black/50">
+              <p>東京</p>
+            </div>
+          </div>
+        </section>
+        <div className="flex justify-start items-center h-screen w-full relative">
+          <Image
+            src={castle}
+            alt="Imperial Palace"
+            sizes="100vw"
+            fill
+            style={{ objectFit: "cover" }}
+            className="brightness-50"
+            placeholder="blur"
+          />
+          <div className="relative text-white font-urbanist text-6xl px-7">
+            <div
+              className="tokyo11 flex overflow-hidden "
+              style={{ height: "1.2em" }}
+            >
+              <p>Tokyo</p>
+            </div>
+            <div
+              className="tokyo22 flex overflow-hidden text-3xl "
+              style={{ height: "1.2em" }}
+            >
+              <p>東京</p>
+            </div>
+            <div className="tokyodesc flex overflow-hidden pt-70 text-[19px]">
+              <p>
+                Located in Chiyoda Ward, Tokyo Station is a transport hub of
+                Shinkansen and the entry point of anyone going in or out of
+                Tokyo
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <Footer />
       </main>
     </>
   );
